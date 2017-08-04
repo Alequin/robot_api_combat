@@ -1,13 +1,17 @@
 function updateCombatantOne(){
   var country = loadCombatantOne();
   var combatantDiv = document.querySelector("#left-combatant");
-  updateCombatantContainer(combatantDiv.children, country);
+  if(country !== undefined && country !== null){
+    updateCombatantContainer(combatantDiv.children, country);
+  }
 }
 
 function updateCombatantTwo(){
   var country = loadCombatantTwo();
   var combatantDiv = document.querySelector("#right-combatant");
-  updateCombatantContainer(combatantDiv.children, country);
+  if(country !== undefined && country !== null){
+    updateCombatantContainer(combatantDiv.children, country);
+  }
 }
 
 function updateCombatantContainer(combatantChildren, country){

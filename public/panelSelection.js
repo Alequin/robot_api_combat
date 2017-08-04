@@ -27,6 +27,8 @@ function onPressFightNav(){
     isCombatPanelVisible = true;
     var panel = document.querySelector("#panel-container");
     panel.appendChild(buildCombatPanel());
+    updateCombatantOne();
+    updateCombatantTwo();
   }
 }
 
