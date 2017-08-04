@@ -31,12 +31,14 @@ function testingbuildCountriesList(){
 
 function populateList(countries){
 
+  var length = countries.length;
+  var robots = generateRandomRobots(length);
+
   var container = document.querySelector("#list-section");
 
-  var length = countries.length;
   for(var j=0; j<length; j++){
     var country = countries[j];
-    country.robot = randomRobot();
+    country.robot = robots[j]
     container.appendChild(document.createElement("hr"));
     container.appendChild(buildCountryElement(j, country));
     container.appendChild(buildSelectionButtons(j));

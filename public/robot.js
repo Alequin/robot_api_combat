@@ -5,12 +5,36 @@ function Robot(name, attack, defence, image){
   this.image = image;
 }
 
-function randomRobot(){
+function generateRandomRobots(count){
 
-  var name = "robot 1";
-  var attack = dice(10, 40);
-  var defence = dice(10, 40);
-  var image = dice(1,2) === 1 ? "robo1.jpg" : "robo2.jpg";
+  var result = [];
+  var names = generateNames(count);
 
-  return new Robot(name, attack, defence, image);
+  for(var j=0; j<count; j++){
+    var name = names[j];
+    var attack = dice(10, 40);
+    var defence = dice(10, 40);
+    var image = dice(1,2) === 1 ? "robo1.jpg" : "robo2.jpg";
+    result.push(new Robot(name, attack, defence, image));
+  }
+
+  return result;
+}
+
+function generateNames(count){
+
+  var names = ["Cabe", "Mechan", "Odeb", "Olog", "Plexi"];
+  var adjectives = ["Autonomous", "Giant", "destroyer", "Bionic", "thingamabob", "Undefined"];
+
+  var result = [];
+  var namesLength = names.length;
+  var adjectivesLength = adjectives.length;
+
+  for(var j=0; j<count; j++){
+    var nameToUse = names[dice(0, namesLength-1)];
+    var adjectiveToUse = adjectives[dice(0, adjectivesLength-1)];
+    result.push(nameToUse + " the " + adjectiveToUse);
+  }
+
+  return result;
 }
