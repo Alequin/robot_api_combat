@@ -39,7 +39,7 @@ function populateList(countries){
   for(var j=0; j<length; j++){
     var country = countries[j];
     country.robot = robots[j];
-    country.score = {win: 0, lose: 0}
+    country.score = {win: 0, loss: 0}
     container.appendChild(document.createElement("hr"));
     container.appendChild(buildCountryElement(j, country));
     container.appendChild(buildSelectionButtons(j, country));

@@ -81,6 +81,9 @@ function buildFightButton(){
   fightBtn.id = "fight-btn";
   fightBtn.classList.add("button");
   fightBtn.innerText = "Click To Fight";
+
+  fightBtn.addEventListener("click", runFight);
+
   return fightBtn;
 }
 
