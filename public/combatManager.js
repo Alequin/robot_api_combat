@@ -49,9 +49,6 @@ function runFight(){
     var temp = attacker;
     attacker = defender;
     defender = temp;
-
-    console.log(robot1.name, robot1.health);
-    console.log(robot2.name, robot2.health);
   }
 
   if(robot1.health > 0){
@@ -67,7 +64,8 @@ function runFight(){
 
 function fight(attacker, defender){
   var damage = attacker.attack + dice(0, 100);
-  damage -= defender.defence + dice(0, 50);
+  damage -= defender.defence + dice(0, 100);
+  if(damage < 0) damage = 0;
   return damage;
 }
 
