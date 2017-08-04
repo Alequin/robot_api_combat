@@ -132,7 +132,8 @@ function buildCombatantSelectionButton(index, text){
 }
 
 function onPressSelectCombatantOne(){
-
+  var selectedCountry = allCountries[this.value];
+  
 }
 
 function onPressSelectCombatantTwo(){
