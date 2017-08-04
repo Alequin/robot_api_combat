@@ -18,5 +18,7 @@ window.addEventListener("load", function(){
   // new PieChart();
   // new BarChart();
 
-  insertCombatPanel();
+  // insertCombatPanel();
+
+  setNavBarEvents();
 });
