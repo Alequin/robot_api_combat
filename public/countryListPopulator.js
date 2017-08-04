@@ -18,16 +18,27 @@ function onRequest(){
 }
 
 function testingbuildCountriesList(){
-  countries = [];
+  allCountries = [
+    {name: "country 1", flag: "flag1.jpg"},
+    {name: "country 2", flag: "flag1.jpg"},
+    {name: "country 3", flag: "flag1.jpg"},
+    {name: "country 4", flag: "flag1.jpg"},
+    {name: "country 5", flag: "flag1.jpg"}
+  ];
+
+  populateList(allCountries);
 }
 
 function populateList(countries){
 
   var container = document.querySelector("#list-section");
 
-  for(var j=0; j<3; j++){
+  var length = countries.length;
+  for(var j=0; j<length; j++){
+    var country = countries[j];
+    country.robot = new Robot();
     container.appendChild(document.createElement("hr"));
-    container.appendChild(buildCountryElement(j, countries[j]));
+    container.appendChild(buildCountryElement(j, country));
     container.appendChild(buildSelectionButtons(j));
     container.appendChild(document.createElement("hr"));
   }
@@ -72,7 +83,7 @@ function buildRightContainer(country){
 
   var roboImg = document.createElement("img");
   roboImg.classList.add("country-robo-img");
-  roboImg.src = "robo1.png";
+  roboImg.src = "robo1.jpg";
   // roboImg.src = "https://robohash.org/"+ country.name +".png";
 
   var roboDetailsList = document.createElement("ul");
