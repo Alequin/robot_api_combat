@@ -1,37 +1,50 @@
 
 var isCombatPanelVisible = false;
 var combatPanel = null;
+var chartPanel = null;
 
 function buildPanels(){
   combatPanel = buildCombatPanel();
+
+  chartPanel = document.createElement("section");
+  chartPanel.id = "chart-panel";
 }
 
 function setNavBarEvents(){
 
   var fight = document.querySelector("#fight-nav");
   var countryWins = document.querySelector("#country-wins-nav");
-  var countryWins = document.querySelector("#region-wins-nav");
+  var regionWins = document.querySelector("#region-wins-nav");
 
   fight.addEventListener("click", onPressFightNav);
-  fight.addEventListener("click", onPressCountryNav);
-  fight.addEventListener("click", onPressRegionNav);
+  countryWins.addEventListener("click", onPressCountryNav);
+  regionWins.addEventListener("click", onPressRegionNav);
 }
 
 function onPressFightNav(){
-  var panel = document.querySelector("#panel-container");
-  panel.appendChild(combatPanel);
+  console.log(isCombatPanelVisible);
+  if(!isCombatPanelVisible){
+    isCombatPanelVisible = true;
+    var panel = document.querySelector("#panel-container");
+    panel.appendChild(buildCombatPanel());
+  }
 }
 
 function onPressCountryNav(){
-
+  isCombatPanelVisible = false;
+  var panel = document.querySelector("#panel-container");
+  new PieChart(chartPanel);
+  panel.appendChild(chartPanel);
 }
 
 function onPressRegionNav(){
-
+  isCombatPanelVisible = false;
+  var panel = document.querySelector("#panel-container");
+  new BarChart(chartPanel);
+  panel.appendChild(chartPanel);
 }
 
 function buildCombatPanel(){
-    isCombatPanelVisible = true;
 
     var container = document.createElement("div");
     var fighterSection = buildFighterSection();
@@ -44,19 +57,19 @@ function buildCombatPanel(){
 }
 
 function buildFighterSection(){
-  var combatPanel = document.createElement("article");
-  combatPanel.id = "combat-panel";
+  var panel = document.createElement("article");
+  panel.id = "combat-panel";
 
   var leftDiv = buildCombatantDiv("Country 1", "robo1.jpg", "xxx", "xxx");
   var vsTag = document.createElement("p");
   vsTag.innerHTML = "<b>VS</b>";
   var rightDiv = buildCombatantDiv("Country 2", "robo2.jpg", "xxx", "xxx");
 
-  combatPanel.appendChild(leftDiv);
-  combatPanel.appendChild(vsTag);
-  combatPanel.appendChild(rightDiv);
+  panel.appendChild(leftDiv);
+  panel.appendChild(vsTag);
+  panel.appendChild(rightDiv);
 
-  return combatPanel;
+  return panel;
 }
 
 function buildFightButton(){
@@ -98,35 +111,8 @@ function makeDetailsPTag(){
 }
 
 function removeCombatPanel(){
-  var combatPanel = document.createElement("article");
-  combatPanel
-}
-
-function insertPieChartPanel(){
-  insertChart("pie");
-}
-
-function insertBarChartPanel(){
-  insertChart("bar");
-}
-
-function insertChart(type){
-
-  switch(type){
-
-    case "pie":
-
-    break;
-
-    case "bar":
-
-    break;
-
-    default:
-      throw Error("wrong input");
-
-  }
-
+  var panel = document.createElement("article");
+  panel
 }
 
 function removeChartPanel(){

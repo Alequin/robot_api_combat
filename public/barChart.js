@@ -1,5 +1,5 @@
-function BarChart(){
-  var container = document.querySelector("#chart-panel");
+
+function BarChart(container){
 
   var chart = new Highcharts.Chart({
     chart: {type: "bar", renderTo: container},

@@ -1,6 +1,5 @@
 
-function PieChart(){
-  var container = document.querySelector("#chart-panel");
+function PieChart(container){
 
   var chart = new Highcharts.Chart({
     chart: {type: "pie", renderTo: container},
