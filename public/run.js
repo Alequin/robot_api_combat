@@ -15,4 +15,5 @@ function onRequest(){
 
 window.addEventListener("load", function(){
   // makeRequest("https://restcountries.eu/rest/v2/all", onRequest);
+  new PieChart();
 });
