@@ -1,0 +1,7 @@
+function updateCombatantOne(){
+
+}
+
+function updateCombatantTwo(){
+
+}

@@ -62,10 +62,10 @@ function buildFighterSection(){
   var panel = document.createElement("article");
   panel.id = "combat-panel";
 
-  var leftDiv = buildCombatantDiv("No Country", "robot_placeholder.png", "xxx", "xxx");
+  var leftDiv = buildCombatantDiv("left-combatant", "No Country", "robot_placeholder.png", "xxx", "xxx");
   var vsTag = document.createElement("p");
   vsTag.innerHTML = "<b>VS</b>";
-  var rightDiv = buildCombatantDiv("No Country", "robot_placeholder.png", "xxx", "xxx");
+  var rightDiv = buildCombatantDiv("right-combatant", "No Country", "robot_placeholder.png", "xxx", "xxx");
 
   panel.appendChild(leftDiv);
   panel.appendChild(vsTag);
@@ -82,8 +82,9 @@ function buildFightButton(){
   return fightBtn;
 }
 
-function buildCombatantDiv(title, image, attack, defence){
+function buildCombatantDiv(id, title, image, attack, defence){
   var div = document.createElement("div");
+  div.id = id;
 
   var titleElement = document.createElement("p");
   titleElement.classList.add("country-title");
