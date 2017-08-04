@@ -10,12 +10,3 @@ body{
 section{
   width: 700px;
 }
-
-#list-section{
-  position: relative;
-  height: 5000px;
-  top: 260px;
-  background: blue;
-  min-width: 250px;
-  z-index: 1;
-}
