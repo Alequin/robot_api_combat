@@ -15,6 +15,7 @@ function generateRandomRobots(count){
     var attack = dice(10, 40);
     var defence = dice(10, 40);
     var image = dice(1,2) === 1 ? "robo1.jpg" : "robo2.jpg";
+    // var image = "https://robohash.org/"+ dice(1, 1000000) +".png";
     result.push(new Robot(name, attack, defence, image));
   }
 
