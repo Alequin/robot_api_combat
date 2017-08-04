@@ -33,8 +33,8 @@ function runFight(country1, country2){
   var robot1 = country1.robot;
   var robot2 = country2.robot;
 
-  var robot1.health = START_HEALTH;
-  var robot2.health = START_HEALTH;
+  robot1.health = START_HEALTH;
+  robot2.health = START_HEALTH;
 
   var attacker = dice(1,2) === 1 ? robot1 : robot2;
   var defender = attacker === robot1 ? robot2 : robot1;

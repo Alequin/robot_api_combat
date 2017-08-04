@@ -1,4 +1,3 @@
-var allCountries = [];
 
 function buildCountriesList(){
   var request = new XMLHttpRequest();
@@ -133,13 +132,11 @@ function buildCombatantSelectionButton(index, text){
 }
 
 function onPressSelectCombatantOne(){
-  var selectedCountry = allCountries[this.value];
-  saveCombatantOne(selectedCountry);
+  saveCombatantOne(this.value);
   updateCombatantOne();
 }
 
 function onPressSelectCombatantTwo(){
-  var selectedCountry = allCountries[this.value];
-  saveCombatantTwo(selectedCountry);
+  saveCombatantTwo(this.value);
   updateCombatantTwo();
 }
