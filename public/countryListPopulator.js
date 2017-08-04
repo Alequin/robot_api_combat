@@ -134,9 +134,11 @@ function buildCombatantSelectionButton(index, text){
 function onPressSelectCombatantOne(){
   var selectedCountry = allCountries[this.value];
   saveCombatantOne(selectedCountry);
+  updateCombatantOne();
 }
 
 function onPressSelectCombatantTwo(){
   var selectedCountry = allCountries[this.value];
   saveCombatantTwo(selectedCountry);
+  updateCombatantTwo();
 }
