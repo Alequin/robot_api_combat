@@ -1,5 +1,10 @@
 
 var isCombatPanelVisible = false;
+var combatPanel = null;
+
+function buildPanels(){
+  combatPanel = buildCombatPanel();
+}
 
 function setNavBarEvents(){
 
@@ -13,7 +18,8 @@ function setNavBarEvents(){
 }
 
 function onPressFightNav(){
-  insertCombatPanel();
+  var panel = document.querySelector("#panel-container");
+  panel.appendChild(combatPanel);
 }
 
 function onPressCountryNav(){
@@ -24,22 +30,20 @@ function onPressRegionNav(){
 
 }
 
-function insertCombatPanel(){
-  if(!isCombatPanelVisible){
-
+function buildCombatPanel(){
     isCombatPanelVisible = true;
 
-    var panel = document.querySelector("#panel-container");
-
-    var combatPanel = buildCombatPanel();
+    var container = document.createElement("div");
+    var fighterSection = buildFighterSection();
     var fightBtn = buildFightButton();
 
-    panel.appendChild(combatPanel);
-    panel.appendChild(fightBtn);
-  }
+    container.appendChild(fighterSection);
+    container.appendChild(fightBtn);
+
+    return container;
 }
 
-function buildCombatPanel(){
+function buildFighterSection(){
   var combatPanel = document.createElement("article");
   combatPanel.id = "combat-panel";
 
@@ -94,7 +98,8 @@ function makeDetailsPTag(){
 }
 
 function removeCombatPanel(){
-
+  var combatPanel = document.createElement("article");
+  combatPanel
 }
 
 function insertPieChartPanel(){

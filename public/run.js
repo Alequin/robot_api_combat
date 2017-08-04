@@ -20,5 +20,6 @@ window.addEventListener("load", function(){
 
   // insertCombatPanel();
 
+  buildPanels();
   setNavBarEvents();
 });
