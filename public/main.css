@@ -25,3 +25,16 @@ section{
   background: blue;
   z-index: 1;
 }
+
+#combat-section article{
+  display: flex;
+  margin-left: 83px;
+}
+
+#combat-section article img{
+  border: 1px solid black;
+  width: 150px;
+  height: 150px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
