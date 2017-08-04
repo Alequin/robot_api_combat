@@ -14,7 +14,6 @@ section{
 #panel-section{
   position: fixed;
   top: 0;
-  height: 270px;
   min-width: 250px;
   z-index: 2;
   background-color: white;
@@ -23,7 +22,7 @@ section{
 #list-section{
   position: relative;
   height: 5000px;
-  top: 260px;
+  top: 330px;
   min-width: 250px;
   z-index: 1;
 }
@@ -50,4 +49,8 @@ section{
 
 #nav-panel p:hover{
   cursor: pointer;
+}
+
+#lower-divider{
+  margin: 5px 0 0 0;
 }
