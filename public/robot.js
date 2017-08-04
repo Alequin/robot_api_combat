@@ -23,7 +23,7 @@ function generateRandomRobots(count){
 
 function generateNames(count){
 
-  var names = ["Cabe", "Mechan", "Odeb", "Olog", "Plexi"];
+  var names = ["Cabe", "Mechan", "Odeb", "Olog", "Plexi", "Boomer", "Nozzle", "Saber", "Raiwad", "Daijinan", "Beta", "Sark", "Arz", "Iluoid", "Grezzer", "Copper"];
   var adjectives = ["Autonomous", "Giant", "destroyer", "Bionic", "thingamabob", "Undefined"];
 
   var result = [];
