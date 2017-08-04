@@ -36,7 +36,7 @@ function populateList(countries){
   var length = countries.length;
   for(var j=0; j<length; j++){
     var country = countries[j];
-    country.robot = new Robot();
+    country.robot = new Robot("robot1", 2, 5, "robo1.jpg");
     container.appendChild(document.createElement("hr"));
     container.appendChild(buildCountryElement(j, country));
     container.appendChild(buildSelectionButtons(j));
@@ -83,16 +83,16 @@ function buildRightContainer(country){
 
   var roboImg = document.createElement("img");
   roboImg.classList.add("country-robo-img");
-  roboImg.src = "robo1.jpg";
+  roboImg.src = country.robot.image;
   // roboImg.src = "https://robohash.org/"+ country.name +".png";
 
   var roboDetailsList = document.createElement("ul");
   var name = document.createElement("li");
-  name.innerHTML = "<b>Name</b>: Name 1"
+  name.innerHTML = "<b>Name</b>: " + country.robot.name;
   var attack = document.createElement("li");
-  attack.innerHTML = "<b>Name</b>: 20"
+  attack.innerHTML = "<b>Attack</b>: " + country.robot.attack;
   var defence = document.createElement("li");
-  defence.innerHTML = "<b>Name</b>: 15"
+  defence.innerHTML = "<b>Defence</b>: " + country.robot.defence;
 
   roboDetailsList.appendChild(name);
   roboDetailsList.appendChild(attack);
