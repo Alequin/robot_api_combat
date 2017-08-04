@@ -4,5 +4,6 @@ window.addEventListener("load", function(){
   setNavBarEvents();
   onPressFightNav();
 
-  buildCountriesList();
+  testingbuildCountriesList();
+  // buildCountriesList();
 });

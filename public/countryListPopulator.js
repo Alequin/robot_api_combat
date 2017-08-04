@@ -17,6 +17,10 @@ function onRequest(){
   populateList(allCountries);
 }
 
+function testingbuildCountriesList(){
+  countries = [];
+}
+
 function populateList(countries){
 
   var container = document.querySelector("#list-section");
