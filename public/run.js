@@ -1,1 +1,5 @@
-alert("i am here");
+window.addEventListener("load", function(){
+
+
+
+})

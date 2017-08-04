@@ -1,0 +1,11 @@
+
+to get a robot image
+<img src="https://robohash.org/any-text.png" alt="">
+
+to set an image size
+<img src="https://robohash.org/any-text.png?size=700x700" alt="">
+
+change the image format
+<img src="https://robohash.org/any-text.jpg" alt="">
+<img src="https://robohash.org/any-text.png" alt="">
+<img src="https://robohash.org/any-text.bitmap" alt="">
