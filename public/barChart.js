@@ -6,9 +6,6 @@ function BarChart(container){
     title: {text: "Fights By Region"},
     xAxis: {
         categories: ["Africa", "Americas", "Asia", "Europe", "Oceania"],
-        labels: {
-            enabled: true
-        }
     },
     yAxis: {
       allowDecimals: false,
@@ -16,17 +13,29 @@ function BarChart(container){
           text: null
       },
       min: 0,
-      max: 6
     },
-    series: [{
-      data: [
-        {y: 1, color: "#ffac33"},
-        {y: 2, color: "#0000ff"},
-        {y: 3, color: "#00ff00"},
-        {y: 4, color: "#00ff00"},
-        {y: 5, color: "#00ff00"},
-      ]
-    }],
+    series: [
+      {
+        name: "Wins",
+        data: [
+          {y: 1, color: "#00ff00"},
+          {y: 2, color: "#00ff00"},
+          {y: 3, color: "#00ff00"},
+          {y: 4, color: "#00ff00"},
+          {y: 5, color: "#00ff00"},
+        ]
+      },
+      {
+        name: "Losses",
+        data: [
+          {y: 1, color: "#ff0000"},
+          {y: 2, color: "#ff0000"},
+          {y: 3, color: "#ff0000"},
+          {y: 4, color: "#ff0000"},
+          {y: 5, color: "#ff0000"},
+        ]
+      }
+    ],
     legend: {
       enabled: false
     },
