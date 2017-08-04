@@ -7,25 +7,25 @@
   background-color: white;
 }
 
-#combat-section article{
+#combat-panel{
   display: flex;
   margin-left: 83px;
 }
 
-#combat-section article .country-title{
+#combat-panel .country-title{
   text-align: center;
 }
 
-#combat-section article img{
+#combat-panel img{
   margin-bottom: 12.5px;
 }
 
-#combat-section article .details{
+#combat-panel .details{
   width: 150px;
   margin: auto;
 }
 
-#combat-section article img{
+#combat-panel img{
   border: 1px solid black;
   width: 150px;
   height: 150px;
