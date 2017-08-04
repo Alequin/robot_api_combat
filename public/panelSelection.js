@@ -22,8 +22,8 @@ function setNavBarEvents(){
 }
 
 function onPressFightNav(){
-  console.log(isCombatPanelVisible);
   if(!isCombatPanelVisible){
+    removeCurrentPanel();
     isCombatPanelVisible = true;
     var panel = document.querySelector("#panel-container");
     panel.appendChild(buildCombatPanel());
@@ -32,6 +32,7 @@ function onPressFightNav(){
 
 function onPressCountryNav(){
   isCombatPanelVisible = false;
+  removeCurrentPanel();
   var panel = document.querySelector("#panel-container");
   new PieChart(chartPanel);
   panel.appendChild(chartPanel);
@@ -39,6 +40,7 @@ function onPressCountryNav(){
 
 function onPressRegionNav(){
   isCombatPanelVisible = false;
+  removeCurrentPanel();
   var panel = document.querySelector("#panel-container");
   new BarChart(chartPanel);
   panel.appendChild(chartPanel);
@@ -106,15 +108,14 @@ function buildCombatantDiv(title, image, attack, defence){
 
 function makeDetailsPTag(){
   var pTag = document.createElement("p");
-  pTag.classList.add("country-title");
+  pTag.classList.add("details");
   return pTag;
 }
 
-function removeCombatPanel(){
-  var panel = document.createElement("article");
-  panel
-}
-
-function removeChartPanel(){
-
+function removeCurrentPanel(){
+  var panel = document.querySelector("#panel-container");
+  var toRemove = panel.children[0];
+  if(toRemove !== undefined && toRemove !== null){
+    panel.removeChild(toRemove);
+  }
 }
