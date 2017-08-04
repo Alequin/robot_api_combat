@@ -1,15 +1,16 @@
 
-function PieChart(container){
+function PieChart(container, countries){
+
+  var dataSet = [];
+  for(var country of countries){
+    dataSet.push({name: country.name, y: country.score.win, colour: "blue"});
+  }
 
   var chart = new Highcharts.Chart({
     chart: {type: "pie", renderTo: container},
-    title: {text: "Pokemon Types I've Caught"},
+    title: {text: "Victories By Country"},
     series: [{
-      name: "Type", data: [
-        {name: "Fire", y: 75, color: "#ffac33"},
-        {name: "Water", y: 25, color: "#0000ff"},
-        {name: "Grass", y: 1, color: "#00ff00"}
-      ]
+      name: "Victories", data: dataSet
     }],
   });
 }
