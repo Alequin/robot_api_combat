@@ -2,7 +2,52 @@
   position: relative;
   height: 5000px;
   top: 260px;
-  background: blue;
   min-width: 250px;
   z-index: 1;
+}
+
+.country-container{
+  display: flex;
+}
+
+.country-inner-container-left, .country-inner-container-right{
+  display: flex;
+}
+
+.country-inner-container-left{
+  flex: 60;
+}
+
+.country-inner-container-right{
+  flex: 40;
+}
+
+.flag-img{
+  width: 192px;
+  height: 110px;
+}
+
+.country-robo-img{
+  width: 120px;
+  height: 120px;
+}
+
+.country-container ul{
+  height: 120px;
+  margin: 0;
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+.combatant-button-container{
+  display: flex;
+}
+
+.combatant-btn{
+  flex: 1;
+  text-align: center;
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 10px;
 }

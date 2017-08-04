@@ -6,6 +6,8 @@ function makeRequest(url, onRequest){
 }
 
 function onRequest(){
+  if(this.status !== 200) return;
+
   var jsonString = this.responseText;
   var countries = JSON.parse(jsonString);
   console.log(countries);
