@@ -36,7 +36,7 @@ function populateList(countries){
   var length = countries.length;
   for(var j=0; j<length; j++){
     var country = countries[j];
-    country.robot = new Robot("robot1", 2, 5, "robo1.jpg");
+    country.robot = randomRobot();
     container.appendChild(document.createElement("hr"));
     container.appendChild(buildCountryElement(j, country));
     container.appendChild(buildSelectionButtons(j));
