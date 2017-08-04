@@ -28,7 +28,10 @@ function updateCombatantContainer(combatantChildren, country){
   defence.innerText = "defence: " + country.robot.defence;
 }
 
-function runFight(country1, country2){
+function runFight(){
+
+  var country1 = loadCombatantOne();
+  var country2 = loadCombatantTwo();
 
   var robot1 = country1.robot;
   var robot2 = country2.robot;
@@ -38,6 +41,7 @@ function runFight(country1, country2){
 
   var attacker = dice(1,2) === 1 ? robot1 : robot2;
   var defender = attacker === robot1 ? robot2 : robot1;
+
   while(robot1.health > 0 && robot2.health > 0){
     var healthToLoose = fight(attacker, defender);
     defender.health -= healthToLoose;
@@ -45,21 +49,46 @@ function runFight(country1, country2){
     var temp = attacker;
     attacker = defender;
     defender = temp;
+
+    console.log(robot1.name, robot1.health);
+    console.log(robot2.name, robot2.health);
   }
 
   if(robot1.health > 0){
     country1.score.win++;
     country2.score.loss++;
-    return country1;
+    highlightCombatantOne();
   }else{
     country2.score.win++;
     country1.score.loss++;
-    return country2;
+    highlightCombatantTwo();
   }
 }
 
 function fight(attacker, defender){
   var damage = attacker.attack + dice(0, 100);
-  damage -= robot2.defence + dice(0, 50);
+  damage -= defender.defence + dice(0, 50);
   return damage;
+}
+
+function highlightCombatantOne(){
+  highlightCombatants({
+    winner: document.querySelector("#left-combatant"),
+    looser: document.querySelector("#right-combatant")
+  });
+}
+
+function highlightCombatantTwo(){
+  highlightCombatants({
+    winner: document.querySelector("#right-combatant"),
+    looser: document.querySelector("#left-combatant")
+  });
+}
+
+function highlightCombatants(divs){
+  var winnerImage = divs.winner.children[1];
+  var looserImage = divs.looser.children[1];
+
+  winnerImage.style.borderColor = "green";
+  looserImage.style.borderColor = "red";
 }
