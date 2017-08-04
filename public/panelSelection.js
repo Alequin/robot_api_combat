@@ -27,10 +27,9 @@ function onPressRegionNav(){
 function insertCombatPanel(){
   if(!isCombatPanelVisible){
 
-    // isCombatPanelVisible = true;
+    isCombatPanelVisible = true;
 
-    var panel = document.querySelector("#panel-section");
-    console.log(panel.children);
+    var panel = document.querySelector("#panel-container");
 
   }
 }
@@ -39,9 +38,33 @@ function removeCombatPanel(){
 
 }
 
-function insertChartPanel(){
+function insertPieChartPanel(){
+  insertChart("pie");
+}
+
+function insertBarChartPanel(){
+  insertChart("bar");
+}
+
+function insertChart(type){
+
+  switch(type){
+
+    case "pie":
+
+    break;
+
+    case "bar":
+
+    break;
+
+    default:
+      throw Error("wrong input");
+
+  }
 
 }
+
 function removeChartPanel(){
 
 }
