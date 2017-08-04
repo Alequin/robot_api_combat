@@ -41,7 +41,7 @@ function populateList(countries){
     country.robot = robots[j]
     container.appendChild(document.createElement("hr"));
     container.appendChild(buildCountryElement(j, country));
-    container.appendChild(buildSelectionButtons(j));
+    container.appendChild(buildSelectionButtons(j, country));
     container.appendChild(document.createElement("hr"));
   }
 }
@@ -106,12 +106,12 @@ function buildRightContainer(country){
   return rightContainer;
 }
 
-function buildSelectionButtons(index){
+function buildSelectionButtons(index, country){
   var selectionBtnContainer = document.createElement("article");
   selectionBtnContainer.classList.add("combatant-button-container");
 
-  var button1 = buildCombatantSelectionButton(index, "Set robo name as combatant 1");
-  var button2 = buildCombatantSelectionButton(index, "Set robo name as combatant 2");
+  var button1 = buildCombatantSelectionButton(index, "Set "+ country.robot.name +" as combatant 1");
+  var button2 = buildCombatantSelectionButton(index, "Set "+ country.robot.name +" as combatant 2");
   selectionBtnContainer.appendChild(button1);
   selectionBtnContainer.appendChild(button2);
 
