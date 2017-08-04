@@ -27,3 +27,7 @@ section{
   min-width: 250px;
   z-index: 1;
 }
+
+#pie-chart{
+  height: 270px;
+}
