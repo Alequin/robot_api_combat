@@ -62,10 +62,10 @@ function buildFighterSection(){
   var panel = document.createElement("article");
   panel.id = "combat-panel";
 
-  var leftDiv = buildCombatantDiv("Country 1", "robo1.jpg", "xxx", "xxx");
+  var leftDiv = buildCombatantDiv("No Country", "robot_placeholder.png", "xxx", "xxx");
   var vsTag = document.createElement("p");
   vsTag.innerHTML = "<b>VS</b>";
-  var rightDiv = buildCombatantDiv("Country 2", "robo2.jpg", "xxx", "xxx");
+  var rightDiv = buildCombatantDiv("No Country", "robot_placeholder.png", "xxx", "xxx");
 
   panel.appendChild(leftDiv);
   panel.appendChild(vsTag);
