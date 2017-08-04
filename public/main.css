@@ -1,0 +1,27 @@
+body{
+  margin: 0;
+}
+
+#primary-container{
+  width: 700px;
+  margin: auto;
+}
+
+section{
+  width: 700px;
+}
+
+#combat-section{
+  position: fixed;
+  height: 250px;
+  min-width: 250px;
+  z-index: 2;
+}
+
+#list-section{
+  position: relative;
+  height: 5000px;
+  top: 260px;
+  background: blue;
+  z-index: 1;
+}
