@@ -11,15 +11,6 @@ section{
   width: 700px;
 }
 
-#combat-section{
-  position: fixed;
-  top: 0;
-  height: 270px;
-  min-width: 250px;
-  z-index: 2;
-  background-color: white;
-}
-
 #list-section{
   position: relative;
   height: 5000px;
@@ -27,30 +18,4 @@ section{
   background: blue;
   min-width: 250px;
   z-index: 1;
-}
-
-#combat-section article{
-  display: flex;
-  margin-left: 83px;
-}
-
-#combat-section article .country-title{
-  text-align: center;
-}
-
-#combat-section article img{
-  margin-bottom: 12.5px;
-}
-
-#combat-section article .details{
-  width: 150px;
-  margin: auto;
-}
-
-#combat-section article img{
-  border: 1px solid black;
-  width: 150px;
-  height: 150px;
-  margin-left: 50px;
-  margin-right: 50px;
 }
