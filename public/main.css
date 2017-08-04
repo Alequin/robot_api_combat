@@ -10,3 +10,20 @@ body{
 section{
   width: 700px;
 }
+
+#panel-section{
+  position: fixed;
+  top: 0;
+  height: 270px;
+  min-width: 250px;
+  z-index: 2;
+  background-color: white;
+}
+
+#list-section{
+  position: relative;
+  height: 5000px;
+  top: 260px;
+  min-width: 250px;
+  z-index: 1;
+}
