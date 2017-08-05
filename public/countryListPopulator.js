@@ -12,8 +12,8 @@ function onRequest(){
   var jsonString = this.responseText;
   allCountries = JSON.parse(jsonString);
 
-  console.log(allCountries);
   populateList(allCountries);
+  produceFakeScoreData(allCountries);
 }
 
 function testingbuildCountriesList(){
@@ -32,6 +32,16 @@ function testingbuildCountriesList(){
   ];
 
   populateList(allCountries);
+  produceFakeScoreData(allCountries);
+}
+
+function produceFakeScoreData(countries){
+
+  for(var country of countries){
+    country.score.win = dice(1, 100);
+    country.score.loss = dice(1, 100);
+  }
+
 }
 
 function populateList(countries){

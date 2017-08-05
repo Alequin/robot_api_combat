@@ -26,10 +26,20 @@ function BarChart(container, countries){
         win: {y: 0, color: winColour},
         loss: {y: 0, color: lossColour}
       },
+      polar: {
+        win: {y: 0, color: winColour},
+        loss: {y: 0, color: lossColour}
+      },
+      unknown: {
+        win: {y: 0, color: winColour},
+        loss: {y: 0, color: lossColour}
+      },
     }
 
     for(var country of countries){
       var region = country.region.toLowerCase();
+
+      if(region === "") region = "unknown";
       data[region].win.y += country.score.win;
       data[region].loss.y += country.score.loss;
     }
@@ -43,7 +53,7 @@ function BarChart(container, countries){
     chart: {type: "bar", renderTo: container},
     title: {text: "Fights By Region"},
     xAxis: {
-        categories: ["Africa", "Americas", "Asia", "Europe", "Oceania"],
+        categories: ["Africa", "Americas", "Asia", "Europe", "Oceania", "Polar", "Unknown"],
     },
     yAxis: {
       allowDecimals: false,
@@ -61,6 +71,8 @@ function BarChart(container, countries){
           chartData.asia.win,
           chartData.europe.win,
           chartData.oceania.win,
+          chartData.polar.win,
+          chartData.unknown.win,
         ]
       },
       {
@@ -71,6 +83,8 @@ function BarChart(container, countries){
           chartData.asia.loss,
           chartData.europe.loss,
           chartData.oceania.loss,
+          chartData.polar.loss,
+          chartData.unknown.loss,
         ]
       }
     ],
