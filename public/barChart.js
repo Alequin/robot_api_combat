@@ -10,8 +10,8 @@ function BarChart(container, countries){
     var data = {};
 
     for(var country of countries){
-      var region = country.region.toLowerCase();
-      if(region === "") region = "unknown";
+      var region = country.region;
+      if(region === "") region = "Unknown";
 
       var regionData = data[region];
       if(regionData === undefined){
