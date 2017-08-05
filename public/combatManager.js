@@ -33,9 +33,10 @@ function runFight(){
   var country1 = loadCombatantOne();
   var country2 = loadCombatantTwo();
 
-  if(country1 === undefined || country2 === undefined){
+  if(!isFightValid(country1, country2)){
     return;
   }
+
 
   var robot1 = country1.robot;
   var robot2 = country2.robot;
@@ -64,6 +65,18 @@ function runFight(){
     country1.score.loss++;
     highlightCombatantTwo();
   }
+}
+
+function isFightValid(country1, country2){
+  if(country1 === undefined || country2 === undefined){
+    alert("Must select two fighters");
+    return false;
+  }
+  if(country1 === country2){
+    alert("Must select two different fighters");
+    return false;
+  }
+  return true;
 }
 
 function fight(attacker, defender){
