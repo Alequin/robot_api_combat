@@ -102,7 +102,6 @@ function buildRightContainer(country){
   var roboImg = document.createElement("img");
   roboImg.classList.add("country-robo-img");
   roboImg.src = country.robot.image;
-  // roboImg.src = "https://robohash.org/"+ country.name +".png";
 
   var roboDetailsList = document.createElement("ul");
   var name = document.createElement("li");
