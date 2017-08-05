@@ -149,10 +149,14 @@ function buildCombatantSelectionButton(index, text){
 
 function onPressSelectCombatantOne(){
   saveCombatantOne(this.value);
-  updateCombatantOne();
+  if(isCombatPanelVisible){
+    updateCombatantOne();
+  }
 }
 
 function onPressSelectCombatantTwo(){
   saveCombatantTwo(this.value);
-  updateCombatantTwo();
+  if(isCombatPanelVisible){
+    updateCombatantTwo();
+  }
 }
