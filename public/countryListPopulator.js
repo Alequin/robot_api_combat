@@ -13,7 +13,7 @@ function onRequest(){
   allCountries = JSON.parse(jsonString);
 
   populateList(allCountries);
-  produceFakeScoreData(allCountries);
+  // produceFakeScoreData(allCountries);
 }
 
 function testingbuildCountriesList(){
@@ -32,7 +32,7 @@ function testingbuildCountriesList(){
   ];
 
   populateList(allCountries);
-  produceFakeScoreData(allCountries);
+  // produceFakeScoreData(allCountries);
 }
 
 function produceFakeScoreData(countries){

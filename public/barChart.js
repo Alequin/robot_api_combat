@@ -4,42 +4,24 @@ function BarChart(container, countries){
   var winColour = "green";
   var lossColour = "red";
 
+  var regions = [];
+
   var generateData = function(countries){
-    var data = {
-      africa: {
-        win: {y: 0, color: winColour},
-        loss: {y: 0, color: lossColour}
-      },
-      americas: {
-        win: {y: 0, color: winColour},
-        loss: {y: 0, color: lossColour}
-      },
-      asia: {
-        win: {y: 0, color: winColour},
-        loss: {y: 0, color: lossColour}
-      },
-      europe: {
-        win: {y: 0, color: winColour},
-        loss: {y: 0, color: lossColour}
-      },
-      oceania: {
-        win: {y: 0, color: winColour},
-        loss: {y: 0, color: lossColour}
-      },
-      polar: {
-        win: {y: 0, color: winColour},
-        loss: {y: 0, color: lossColour}
-      },
-      unknown: {
-        win: {y: 0, color: winColour},
-        loss: {y: 0, color: lossColour}
-      },
-    }
+    var data = {};
 
     for(var country of countries){
       var region = country.region.toLowerCase();
-
       if(region === "") region = "unknown";
+
+      var regionData = data[region];
+      if(regionData === undefined){
+        data[region] = {
+          win: {y: 0, color: winColour},
+          loss: {y: 0, color: lossColour}
+        };
+        regions.push(region);
+      }
+
       data[region].win.y += country.score.win;
       data[region].loss.y += country.score.loss;
     }
@@ -48,12 +30,20 @@ function BarChart(container, countries){
   }
 
   var chartData = generateData(countries);
+  var winData = [];
+  var lossData = [];
+  for(var region of regions){
+    winData.push(chartData[region].win);
+    lossData.push(chartData[region].loss);
+  }
+
+  console.log(regions);
 
   var chart = new Highcharts.Chart({
     chart: {type: "bar", renderTo: container},
     title: {text: "Fights By Region"},
     xAxis: {
-        categories: ["Africa", "Americas", "Asia", "Europe", "Oceania", "Polar", "Unknown"],
+        categories: regions
     },
     yAxis: {
       allowDecimals: false,
@@ -65,27 +55,11 @@ function BarChart(container, countries){
     series: [
       {
         name: "Wins",
-        data: [
-          chartData.africa.win,
-          chartData.americas.win,
-          chartData.asia.win,
-          chartData.europe.win,
-          chartData.oceania.win,
-          chartData.polar.win,
-          chartData.unknown.win,
-        ]
+        data: winData
       },
       {
         name: "Losses",
-        data: [
-          chartData.africa.loss,
-          chartData.americas.loss,
-          chartData.asia.loss,
-          chartData.europe.loss,
-          chartData.oceania.loss,
-          chartData.polar.loss,
-          chartData.unknown.loss,
-        ]
+        data: lossData
       }
     ],
     legend: {
