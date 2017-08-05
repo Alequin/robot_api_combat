@@ -3,7 +3,7 @@ function BarChart(container, countries){
 
   var regions = [];
 
-  var generateData = function(countries){
+  var organiseData = function(countries){
     var data = {};
     var winColour = "green";
     var lossColour = "red";
@@ -28,7 +28,7 @@ function BarChart(container, countries){
     return data;
   }
 
-  var chartData = generateData(countries);
+  var chartData = organiseData(countries);
   var winData = [];
   var lossData = [];
   for(var region of regions){
@@ -43,21 +43,14 @@ function BarChart(container, countries){
         categories: regions
     },
     yAxis: {
-      allowDecimals: false,
       title: {
-          text: null
+          text: "null"
       },
       min: 0,
     },
     series: [
-      {
-        name: "Wins",
-        data: winData
-      },
-      {
-        name: "Losses",
-        data: lossData
-      }
+      {name: "Wins", data: winData},
+      {name: "Losses", data: lossData}
     ],
     legend: {
       enabled: false

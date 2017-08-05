@@ -32,7 +32,7 @@ function testingbuildCountriesList(){
   ];
 
   populateList(allCountries);
-  // produceFakeScoreData(allCountries);
+  produceFakeScoreData(allCountries);
 }
 
 function produceFakeScoreData(countries){
