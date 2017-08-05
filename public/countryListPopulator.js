@@ -17,12 +17,18 @@ function onRequest(){
 }
 
 function testingbuildCountriesList(){
+  categories: ["Africa", "Americas", "Asia", "Europe", "Oceania"]
   allCountries = [
-    {name: "country 1", flag: "flag1.jpg"},
-    {name: "country 2", flag: "flag1.jpg"},
-    {name: "country 3", flag: "flag1.jpg"},
-    {name: "country 4", flag: "flag1.jpg"},
-    {name: "country 5", flag: "flag1.jpg"}
+    {name: "country 1", flag: "flag1.jpg", region: "Africa"},
+    {name: "country 2", flag: "flag1.jpg", region: "Americas"},
+    {name: "country 3", flag: "flag1.jpg", region: "Asia"},
+    {name: "country 4", flag: "flag1.jpg", region: "Europe"},
+    {name: "country 5", flag: "flag1.jpg", region: "Ocea"},
+    {name: "country 6", flag: "flag1.jpg", region: "Africa"},
+    {name: "country 7", flag: "flag1.jpg", region: "Americas"},
+    {name: "country 8", flag: "flag1.jpg", region: "Asia"},
+    {name: "country 9", flag: "flag1.jpg", region: "Europe"},
+    {name: "country 10", flag: "flag1.jpg", region: "Ocea"}
   ];
 
   populateList(allCountries);
