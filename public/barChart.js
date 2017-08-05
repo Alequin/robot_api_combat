@@ -8,23 +8,23 @@ function BarChart(container, countries){
     var data = {
       africa: {
         win: {y: 0, color: winColour},
-        loss: {y: 0, color: winColour}
+        loss: {y: 0, color: lossColour}
       },
       americas: {
         win: {y: 0, color: winColour},
-        loss: {y: 0, color: winColour}
+        loss: {y: 0, color: lossColour}
       },
       asia: {
         win: {y: 0, color: winColour},
-        loss: {y: 0, color: winColour}
+        loss: {y: 0, color: lossColour}
       },
       europe: {
         win: {y: 0, color: winColour},
-        loss: {y: 0, color: winColour}
+        loss: {y: 0, color: lossColour}
       },
       oceania: {
         win: {y: 0, color: winColour},
-        loss: {y: 0, color: winColour}
+        loss: {y: 0, color: lossColour}
       },
     }
 
@@ -33,6 +33,8 @@ function BarChart(container, countries){
       data[region].win.y += country.score.win;
       data[region].loss.y += country.score.loss;
     }
+
+    return data;
   }
 
   var chartData = generateData(countries);
