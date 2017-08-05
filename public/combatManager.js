@@ -33,6 +33,10 @@ function runFight(){
   var country1 = loadCombatantOne();
   var country2 = loadCombatantTwo();
 
+  if(country1 === undefined || country2 === undefined){
+    return;
+  }
+
   var robot1 = country1.robot;
   var robot2 = country2.robot;
 
