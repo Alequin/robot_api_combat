@@ -44,7 +44,7 @@ function onPressRegionNav(){
   isCombatPanelVisible = false;
   removeCurrentPanel();
   var panel = document.querySelector("#panel-container");
-  new BarChart(chartPanel);
+  new BarChart(chartPanel, allCountries);
   panel.appendChild(chartPanel);
 }
 
