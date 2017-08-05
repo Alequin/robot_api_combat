@@ -1,13 +1,12 @@
 
 function BarChart(container, countries){
 
-  var winColour = "green";
-  var lossColour = "red";
-
   var regions = [];
 
   var generateData = function(countries){
     var data = {};
+    var winColour = "green";
+    var lossColour = "red";
 
     for(var country of countries){
       var region = country.region;
@@ -36,8 +35,6 @@ function BarChart(container, countries){
     winData.push(chartData[region].win);
     lossData.push(chartData[region].loss);
   }
-
-  console.log(regions);
 
   var chart = new Highcharts.Chart({
     chart: {type: "bar", renderTo: container},
